@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ru.list.rb.s.PrimaryController">
+    <MenuBar>
+        <Menu text="Программа">
+            <MenuItem text="Выйти" onAction="#exitAction"/>
+        </Menu>
+    </MenuBar>
+    <TextArea fx:id="mainArea" editable="false" VBox.vgrow="ALWAYS"/>
+    <!--    VBox - размещает элементы внутри себя по вертикали. Grow Always - максимально вытягивается-->
+    <HBox>
+        <TextField fx:id="msgField" HBox.hgrow="ALWAYS" promptText="Введите сообщение..."
+                   onAction="#sendMessageAction"/>
+        <Button text="Отправить" onAction="#sendMessageAction"/>
+    </HBox>
+</VBox>
