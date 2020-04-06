@@ -7,10 +7,13 @@ import java.util.Properties;
 
 public class AppConfig {
 
+    public static final String PROPERTIES_PATH_TO_HOST = "network.host";
+    public static final String PROPERTIES_PATH_TO_PORT = "port";
+//    public static final String PROPERTIES_PATH_TO_CLIENT_APP_TITLE = "client.app.title";
     private static volatile AppConfig instance;
     private static String host;
     private static int port;
-    private static String appTitle;
+//    private static String appTitle;
     private final static String PATH_TO_PROPERTIES = "application.properties";
 
     private AppConfig() {}
@@ -29,9 +32,9 @@ public class AppConfig {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        host = properties.getProperty("network.host");
-        port = Integer.parseInt(properties.getProperty("port"));
-        appTitle = properties.getProperty("client.app.title");
+        host = properties.getProperty(PROPERTIES_PATH_TO_HOST);
+        port = Integer.parseInt(properties.getProperty(PROPERTIES_PATH_TO_PORT));
+//        appTitle = properties.getProperty(PROPERTIES_PATH_TO_CLIENT_APP_TITLE);
         return instance;
     }
 
@@ -43,7 +46,7 @@ public class AppConfig {
         return port;
     }
 
-    public String getAppTitle() {
-        return appTitle;
-    }
+//    public String getAppTitle() {
+//        return appTitle;
+//    }
 }
