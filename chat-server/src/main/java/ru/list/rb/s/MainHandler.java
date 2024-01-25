@@ -64,17 +64,4 @@ public class MainHandler extends SimpleChannelInboundHandler<String> { // Инб
         ctx.close(); // Распечатали исключение и закрываем соединение с этим клиентом
         logger.error("Закрывается соединение");
     }
-
-
-    //    // Метод не требуется. Остался при наследовании от ChannelInboundHandlerAdapter
-//    @Override
-//    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-//        // Чтение из канала от клиента (то что приходит из сети в нетти попадает в ByteBuffer).
-//        // Так как данный хэндлер первый от сети, то получаем ByteBuffer
-//        ByteBuf buf = (ByteBuf) msg;
-//        while (buf.readableBytes() > 0) {
-//            System.out.print((char) buf.readByte()); // Читаем по одному байту и преобразовываем в char
-//        }
-//        buf.release();
-//    }
 }
